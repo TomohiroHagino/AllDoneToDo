@@ -29,6 +29,33 @@ struct LoginView: View {
                         placeholder: "Password"
                     ).padding([.horizontal], 32)
                 }
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("パスワードを忘れた?")
+                            .foregroundColor(.white)
+                            .font(.system(size: 13, weight: .semibold ))
+                            .padding(.top)
+                            .padding(.trailing, 28)
+                    }
+                }
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        AuthenticateButtonView(text: "Sign In")
+                            .padding()
+                    }
+                }
+                
+
             }
         }
     }
