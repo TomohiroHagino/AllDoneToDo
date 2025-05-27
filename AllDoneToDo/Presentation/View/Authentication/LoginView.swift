@@ -13,50 +13,66 @@ struct LoginView: View {
     @State var password = ""
 
     var body: some View {
-        ZStack {
-            BackgroundGradientView()
-            
-            VStack {
-                LogoView()
+        NavigationView {
+            ZStack {
+                BackgroundGradientView()
                 
-                VStack(spacing: 20) {
-                    EmailTextField(
-                        text: $email
-                    ).padding([.horizontal], 32)
+                VStack {
+                    LogoView()
+                    
+                    VStack(spacing: 20) {
+                        EmailTextField(
+                            text: $email
+                        ).padding([.horizontal], 32)
 
-                    PasswordSecureField(
-                        text: $password,
-                        placeholder: "Password"
-                    ).padding([.horizontal], 32)
-                }
-                
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        
-                    } label: {
-                        Text("パスワードを忘れた?")
-                            .foregroundColor(.white)
-                            .font(.system(size: 13, weight: .semibold ))
-                            .padding(.top)
-                            .padding(.trailing, 28)
+                        PasswordSecureField(
+                            text: $password,
+                            placeholder: "Password"
+                        ).padding([.horizontal], 32)
                     }
-                }
-                
-                HStack {
-                    Spacer()
                     
-                    Button {
+                    HStack {
+                        Spacer()
                         
+                        Button {
+                            
+                        } label: {
+                            Text("パスワードを忘れた?")
+                                .foregroundColor(.white)
+                                .font(.system(size: 13, weight: .semibold ))
+                                .padding(.top)
+                                .padding(.trailing, 28)
+                        }
+                    }
+                        
+                    Button {
+                            
                     } label: {
                         AuthenticateButtonView(text: "Sign In")
                             .padding()
                     }
-                }
-                
 
-            }
+                    Spacer()
+                    
+                    NavigationLink(
+                        destination:
+                            SignupView()
+                                .navigationBarHidden(true),
+                    
+                        label: {
+                            HStack {
+                                Text("アカウントをまだ持っていない場合:")
+                                    .font(.system(size: 14))
+                    
+                                Text("Sign up")
+                                    .font(.system(size: 14, weight: .semibold))
+                                }.foregroundColor(.white)
+                    
+                            }
+                    )
+
+                } // VStack End
+            } // ZStack End
         }
     }
 }
