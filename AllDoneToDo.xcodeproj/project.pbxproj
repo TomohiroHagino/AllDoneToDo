@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		667086542DE5D94A0012507B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 667086532DE5D94A0012507B /* GoogleService-Info.plist */; };
 		667086572DE5DBFA0012507B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 667086562DE5DBFA0012507B /* FirebaseAuth */; };
 		667086592DE5DBFA0012507B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 667086582DE5DBFA0012507B /* FirebaseFirestore */; };
+		6670865B2DE64DBD0012507B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6670865A2DE64DBD0012507B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,7 @@
 		667086062DE564620012507B /* AllDoneToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllDoneToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667086132DE564650012507B /* AllDoneToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllDoneToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6670861D2DE564650012507B /* AllDoneToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllDoneToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		667086532DE5D94A0012507B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6670865A2DE64DBD0012507B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,7 +84,7 @@
 		667085FD2DE564620012507B = {
 			isa = PBXGroup;
 			children = (
-				667086532DE5D94A0012507B /* GoogleService-Info.plist */,
+				6670865A2DE64DBD0012507B /* GoogleService-Info.plist */,
 				667086082DE564620012507B /* AllDoneToDo */,
 				667086162DE564650012507B /* AllDoneToDoTests */,
 				667086202DE564650012507B /* AllDoneToDoUITests */,
@@ -227,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				667086542DE5D94A0012507B /* GoogleService-Info.plist in Resources */,
+				6670865B2DE64DBD0012507B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
