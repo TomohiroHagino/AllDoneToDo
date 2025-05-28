@@ -62,7 +62,7 @@ class TODOViewModel: ObservableObject {
         }
     }
     
-    func deleteTODO( v) {
+    func deleteTODO(todoId: String) {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
         
         COLLECTION_USERS.document(uid).collection("to-dos").document(todoId).delete() { error in
@@ -89,7 +89,7 @@ class TODOViewModel: ObservableObject {
     func uncompleteTODO(todoId: String) {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
         
-        COLLECTION_USERS.document(uid).collection("to-dos").document(todoId).updateData(["completed": false]) { error in
+        COLLECTION_USERS.document(uid).collection("to-dos").document(todoId).updateData(["completed": true]) { error in
             if let error = error {
                 print("DEBUG: \(error.localizedDescription)")
                 return
