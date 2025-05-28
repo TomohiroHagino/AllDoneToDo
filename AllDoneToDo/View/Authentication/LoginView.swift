@@ -11,6 +11,8 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    
+    @EnvironmentObject var ViewModel: AuthViewModel
 
     var body: some View {
         NavigationView {
@@ -46,7 +48,7 @@ struct LoginView: View {
                     }
                         
                     Button {
-                            
+                        ViewModel.login(withEmail: email, password: password)
                     } label: {
                         AuthenticateButtonView(text: "Sign In")
                             .padding()

@@ -16,6 +16,8 @@ struct SignupView: View {
     @State var confirmPassword = ""
     
     @Environment(\.presentationMode) var mode
+    
+    @EnvironmentObject var ViewModel: AuthViewModel
 
     var body: some View {
         ZStack {
@@ -35,7 +37,12 @@ struct SignupView: View {
                 .padding(.horizontal, 32)
                 
                 Button {
-                    
+                    ViewModel.register(
+                        withEmail: email,
+                        password: password,
+                        firstName: firstName,
+                        lastName: lastName
+                    )
                 } label: {
                     AuthenticateButtonView(text: "Sign Up")
                         .padding()

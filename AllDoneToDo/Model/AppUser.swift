@@ -14,9 +14,8 @@ struct AppUser: Identifiable, Decodable {
     let firstName: String
     let lastName: String
     let email: String
-    
-// DDDのエンティティとしてはAuthViewModelに分離したほうがよい。
-//    var isCurrentUser: Bool {
-//        return AuthViewModel.shared.userSession?.uid == self.id
-//    }
+
+    var isCurrentUser: Bool {
+        return AuthViewModel.shared.userSession?.uid == self.id
+    }
 }

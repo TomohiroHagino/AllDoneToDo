@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        LoginView()
+        if viewModel.userSession == nil {
+            LoginView()
+        } else {
+//            現状はuserが取得できないので、コメントアウトしておく
+            if let user = viewModel.currentUser {
+                DashboardView(user: user)
+            }
+        }
     }
 }
 
