@@ -10,7 +10,7 @@ import FirebaseFirestore
 struct TODO: Identifiable, Decodable {
     
     @DocumentID var id: String?
-    let ownerID: String
+    let ownerUID: String
     var title: String
     var description: String
     var TODOType: String
