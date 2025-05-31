@@ -59,8 +59,7 @@ struct CustomTextEditor: View {
                 TextEditor(text: $text)
                     .autocapitalization(.none)
                     .foregroundColor(.black)
-//                    .padding()
-                    .background(.clear)
+                    .background(Color.clear)
             }
 
         }

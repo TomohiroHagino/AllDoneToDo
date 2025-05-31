@@ -14,7 +14,7 @@ struct ContentView: View {
         if viewModel.userSession == nil {
             LoginView()
         } else {
-//            現状はuserが取得できないので、コメントアウトしておく
+//          現状はuserが取得できないので、コメントアウトしておく
             if let user = viewModel.currentUser {
                 DashboardView(user: user)
             }

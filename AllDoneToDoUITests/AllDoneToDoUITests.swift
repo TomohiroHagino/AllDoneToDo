@@ -8,34 +8,36 @@
 import XCTest
 
 final class AllDoneToDoUITests: XCTestCase {
+    
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    @MainActor
-    func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
-        }
+    func testLoginScreenElementsExist() throws {
+        // 画面にTextFieldやButtonがあること
+        XCTAssertTrue(app.textFields["emailTextField"].exists)
+        XCTAssertTrue(app.secureTextFields["passwordSecureField"].exists)
+        XCTAssertTrue(app.buttons["loginButton"].exists)
+    }
+
+    func testLoginFlow() throws {
+        // 正しい情報でログインし、ダッシュボードが表示されること
+        let email = app.textFields["emailTextField"]
+        let password = app.secureTextFields["passwordSecureField"]
+        let loginButton = app.buttons["loginButton"]
+        
+        email.tap()
+        email.typeText("test@example.com")
+
+        password.tap()
+        password.typeText("password123")
+
+        loginButton.tap()
+        
+        // ログイン成功後に表示されるべき要素があること
+        XCTAssertTrue(app.staticTexts["- AllDoneToDo -"].waitForExistence(timeout: 5))
     }
 }
